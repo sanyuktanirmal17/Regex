@@ -31,6 +31,7 @@ public class UserUpdate {
 		user.firstname();
 		user.lastname();
 		user.emailId();
+		user.MobileNo();
 
 	}
 
@@ -81,4 +82,16 @@ public class UserUpdate {
 		}
 		return regex != null;
 	}
+	/**
+	 * Mobile number pattern 
+	 *match number formate with country code
+	 */
+	public void MobileNo() {
+		System.out.println("Enter MobileNo :");
+		String MobileNo = sc.next();
+		boolean valid = MobileNo.matches( "^[1-9][0-9][1-9]{10}$" );
+		System.out.println("MobileNo is:" + MobileNo + "\nvalid: " + valid);
+		System.out.println(valid);
+	}
 }
+
