@@ -32,6 +32,7 @@ public class UserUpdate {
 		user.lastname();
 		user.emailId();
 		user.MobileNo();
+		user.passWord();
 
 	}
 
@@ -57,7 +58,7 @@ public class UserUpdate {
 		System.out.println("Last Name is:" + name + "\nvalid: " + valid);
 		return valid;
 	}
-	
+
 	/**
 	 * Email Validation pattern
 	 */
@@ -82,16 +83,28 @@ public class UserUpdate {
 		}
 		return regex != null;
 	}
+
 	/**
-	 * Mobile number pattern 
-	 *match number formate with country code
+	 * Mobile number pattern match number formate with country code
 	 */
 	public void MobileNo() {
 		System.out.println("Enter MobileNo :");
 		String MobileNo = sc.next();
-		boolean valid = MobileNo.matches( "^[1-9][0-9][1-9]{10}$" );
+		boolean valid = MobileNo.matches("^[1-9][0-9][1-9]{10}$");
 		System.out.println("MobileNo is:" + MobileNo + "\nvalid: " + valid);
 		System.out.println(valid);
 	}
-}
+	/*
+	 * minimum 8 Characters Should have at least 1 Upper Case Should have at least 1
+	 * numeric number in the password Has exactly 1 Special Character
+	 */
 
+	public void passWord() {
+		System.out.println("Enter PassWord:");
+		String Pass1 = sc.next();
+		boolean valid = Pass1.matches("^(?=.*[A-Z])[a-zA-z0-9!@#$%^&*()_+=-{};':<>,./?~`]{8,}$)" + "(?=\\S+$).{8,}$");
+		System.out.println("PassWord is:" + Pass1 + "\nvalid: " + valid);
+		System.out.println(valid);
+
+	}
+}
